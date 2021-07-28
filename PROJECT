@@ -1,0 +1,16 @@
+domain: beezlabs.com
+layout:
+- go.kubebuilder.io/v3
+projectName: test-operator
+repo: karthikn23/testOperator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: beezlabs.com
+  group: webapp
+  kind: TestOperator
+  path: karthikn23/testOperator/api/v1
+  version: v1
+version: "3"

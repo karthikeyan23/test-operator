@@ -1,0 +1,7 @@
+apiVersion: webapp.beezlabs.com/v1
+kind: TestOperator
+metadata:
+  name: testoperator-sample
+spec:
+  # Add fields here
+  foo: bar
