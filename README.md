@@ -1,1 +1,1 @@
-Test Operator 
+Test Operator
