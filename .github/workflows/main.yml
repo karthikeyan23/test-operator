@@ -9,7 +9,7 @@ on:
     branches: [ main ]
     tags:
       - v*
-      
+
   pull_request:
     branches: [ main ]
   
@@ -42,7 +42,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
       - name: Log in to registry
-        run: docker login ghcr.io -u ${{ github.actor }} ${{ secrets.MY_PAT }}
+        run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.MY_PAT }}
 
       - name: Push image
         run: |
