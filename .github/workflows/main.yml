@@ -67,9 +67,8 @@ jobs:
           docker push $IMAGE_ID:$VERSION
 
       - name: Create Release
-        uses: actions/create-release@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          tag_name: ${{ env.VERSION }}
-          release_name: Release ${{ env.VERSION }}
+          repo_token: ${{ secrets.MY_PAT }}
+          automatic_release_tag: "latest"
+          prerelease: true
