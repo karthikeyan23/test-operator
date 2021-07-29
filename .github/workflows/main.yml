@@ -65,12 +65,13 @@ jobs:
           echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-        
+
       - name: Create Tag
-        uses: Klemensas/action-autotag@stable
+        uses: negz/create-tag@v1
         with:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          version: "${{ env.VERSION }}"
+          version: ${{ env.VERSION }}
+          message: Tag ${{ env.VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: actions/create-release@v1
