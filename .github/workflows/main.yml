@@ -66,17 +66,17 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
-      - name: Create Tag
-        uses: negz/create-tag@v1
-        with:
-          version: ${{ env.VERSION }}
-          message: ${{ env.VERSION }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Create Tag
+      #   uses: negz/create-tag@v1
+      #   with:
+      #     version: ${{ env.VERSION }}
+      #     message: ${{ env.VERSION }}
+      #     token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.VERSION }}
-          release_name: ${{ env.VERSION }}
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ env.VERSION }}
+      #     release_name: ${{ env.VERSION }}
