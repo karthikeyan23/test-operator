@@ -66,9 +66,9 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
-      - name: Create Release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.MY_PAT }}
-          automatic_release_tag: "latest"
-          prerelease: true
+      # - name: Create Release
+      #   uses: marvinpinto/action-automatic-releases@latest
+      #   with:
+      #     repo_token: ${{ secrets.MY_PAT }}
+      #     automatic_release_tag: "latest"
+      #     prerelease: true
