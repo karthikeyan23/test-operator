@@ -70,7 +70,7 @@ jobs:
         uses: negz/create-tag@v1
         with:
           version: ${{ env.VERSION }}
-          message: Tag ${{ env.VERSION }}
+          message: ${{ env.VERSION }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
